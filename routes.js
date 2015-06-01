@@ -4,6 +4,9 @@
  */
 
 var routes = function(app){
+    app.get('/', function(req, res){
+        res.send(200,"Server is live !")
+    })
     app.get('/sendEmail', function(req, res){
         res.send(200,"OK");
     })
