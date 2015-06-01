@@ -8,6 +8,8 @@ var routes = function(app){
         res.send(200,"Server is live !")
     })
     app.get('/sendEmail', function(req, res){
+
+        console.log("CAlled : " + req.ip)
         res.send(200,"OK");
     })
 };
