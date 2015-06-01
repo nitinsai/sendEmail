@@ -5,7 +5,7 @@
 
 var express = require('express');
 var app = module.exports = express();
-
+var  path = require('path');
 app.set('port', process.env.PORT || 3000);
 
 app.use(express.cookieParser());
@@ -16,6 +16,10 @@ app.use(express.urlencoded());
 app.use(express.methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
 
-var routes = require('routes');
+var routes = require('./routes');
 
 routes(app);
+
+app.listen(process.env.PORT || 3000, function(){
+    console.log("Server Started")
+})
